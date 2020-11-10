@@ -1,0 +1,146 @@
+REFATORAÇÃO DE CÓDIGO
+
+-> mudar a sua estrutura sem mudar o seu comportamento
+
+QUAIS SAO AS MOTIVACOES PARA REFATORAR UM CÓDIGO
+
+REFACTORING
+
+A change made to the internal structure of software to make it easier to understand and cheaper
+to modify without changings its observable behavior.
+
+É uma mudança  feita na estrutura interna de um software para que o entendimento se torne mais simples
+e o custo para modificação seja menor sem que o seu comportamento original seja alterado.
+
+Se mudamos o que o programa faz consequentemente estaremos alterando o seu comportamento
+-----------------------------------------------------------------------------------------------------------
+POR QUE REFATORAR?
+
+Se um código funciona é necessário refatorar?
+
+*Inserir mais qualidade na estrutura do código
+*Um código bem escrito é mais fácil de dar manutenção , consequentemente mais barato
+*Refatoração é edição Quando criamos alguma feature , pense nela inicialmente como um rascunho,
+ela foi da melhor maneira naquele momento, ela funciona mas pode ser que ela seja a última versão para aquele código.
+
+-----------------------------------------------------------------------------------------------------------
+QUANDO REFATORAR?
+
+explicação do restaurante
+
+Imagine que vc tem uma restaurante que tem vários clientes
+e que tem bastante movimento , por causa desse movimento, você deixa de limpar a cozinha
+e chega um momento que tudo está impraticavel e vc tem q fechar o restaurante.
+
+**Antes ou na criação de um teste unitário( Usar a técnica do RED,GREEN ,REFACTOR)
+**Se o código atual está muito ruim
+**Como parte de uma resolução de um bug
+**Como parte de uma Code Review
+-----------------------------------------------------------------------------------------------------------
+QUANDO NÃO REFATORAR?
+
+**Quando você não pode verificar se o código funciona
+   ->Entender o código
+   ->Criar os testes
+   ->RED ,GREEN,REFACTOR
+
+**Débito Técnico Massivo
+  ->Código tão ruim que é melhor derrubar e criar tudo do zero
+
+**Prazo Curto
+
+Frase do martin Fowler Refactoring
+
+"Other than when you are very close to a deadline...you should not put off
+recatoring because you haven't got time" ( o famoso Sem tempo Irmão)
+
+Caso isso não acontece a sua própria refatoração pode causar um novo bug
+--------------------------------------------------------------------------------
+PROCESSO DE REFATORAÇÃO
+
+->Regra do escoteiro
+Deixe o seu código melhor do que você encontrou
+
+PROCESSO
+
+->Tenha uma versão anterior estável, caso a refatoração dê algum problema
+->Verificar o comportamento do código de preferência usando testes unitários para serem usados no mesmo código após a refatoração
+->Aplicar a refatoração
+->Verificar se o comportamento original não foi afetado.Caso seja, atualize o seu Refactor e não seus testes
+--------------------------------------------------------------------------------
+ESCREVENDO TESTES DE CARACTERIZAÇÃO
+
+**SISTEMAS LEGADOS OU Q NAO EXISTAM TESTES
+
+->Escrever testes para Falhar
+->Usar a saída do teste que falhou para capturar o comportamento atual
+->Escrever um teste que passe o comportamento atual
+->Rodar o novo teste ele deve passar
+--------------------------------------------------------------------------------
+REFACTORING
+
+->Remova as duplicações(duplicações no código são carecterísticas de débito técnico) Use O.O do jeito correto
+->Melhorar a nomenclatura das variáveis, métodos e até classes para expressarem realmente o que são. (nomes devem revelar intenção)
+->Diminuir as funções, métodos muito grandes.Devem ser focadas em uma responsabilidade específica.
+->Reduzir o acoplamento de código.(depender sempre da abstração e não da implementação)
+->Reduzir a complexidade (menos estruturas de decisão e repetição)(dividir ou eliminar as lógicas condicionais)
+->Separar as responsabilidades
+--------------------------------------------------------------------------------
+O QUE SÃO "CODE SMELLS"  ou "BAD SMELL" E COMO PODEMOS LIDAR?
+
+->Indica ou corresponde a um problema profundo de um sistema.
+->Indica um código que necessita de refatoração
+->Ajudam a verificar quais áreas do cpodugo devem ser limpas
+
+->Não desenvolva o chamado "código olfativo" (código de uma pessoa q ja faz aquilo a bastante tempo )
+
+
+PRINCÍPIO DA SURPRESA MÍNIMA
+
+->Faça exatamente o que o usuário espera
+->Seja Simple (KISS)
+->Seja claro e seja consistente
+-----------------------------------------------------------------------------------
+CLASSIFICAÇÃO DE CODE SMELL POR MICAH MANTILA
+
+->Bloaters 
+**Código cresce de forma desnecessária frequentemente
+***Com o tempo impacta na velocidade e processamento do código
+****Para prevenção, crie código enxutos e focados
+
+->Object orientation Abusers
+**Relacionados a erros de uso da orientação á objetos
+***Quebra de polimorfismo,Uso inapropriado de herança,criação de acoplamento inapropriado
+****Uso de OO de forma correta
+
+->Change preventers
+ **Tende a acontecer em várias partes do software
+ **Criação de forte acoplamento, Falta de separação de lógicas(resposabilidade unica)
+
+->Dispensables
+**Existe no código mas não tem nenhum valor ou não são usados
+***Podem ser removidos com total segurana e sem nenhum esforço
+
+->Couplers
+**Acoplamento de partes do sistema que não precisam ser acopladas
+***Introduz acoplamento excessivo,Acoplam partes do sistema não relacionadas
+****Sistemas grandes devem ser modulares para que as alterações não afetem outras partes.
+
+->Obfuscators
+**Encobrem o comportamento ou o proposito do nosso código
+***Falta de comunicação do código, não mostra o que tem q ser feito,esconde a intenção, confunde o leitor
+-----------------------------------------------------------------------------
+CODE SMELL NO C# POR ORGANIZAÇÃO HIERÁRQUICA
+
+DECLARAÇÕES
+
+var a = Process();
+
+MÉTODOS
+
+EFETUARFLUXO(string a, int f,double d float f);
+
+CLASSES
+
+nomes ruins
+
