@@ -144,3 +144,51 @@ CLASSES
 
 nomes ruins
 
+-----------------------------------------------------------------------------
+SMELLS
+
+PRIMITIVE OBSESSION
+
+-> Ocorre quando se é usado muitos tipos primitivos ao invés de estruturas de abstrações
+-> Pode tornar o código menos legível e sem intenção e isso torna a leitura muito difícil
+-> Resulta em duplicações de código pois esses valores não estão organizados em uma única estrutura
+
+COMO RESOLVER
+->Em classes, criar objetos agregadores (os Famosos Value Objects ou objetos de valor) 
+para segregar esses tipos em um objeto e assim usar a O.O para trabalhar com uma abstração como um novo modelo.
+->Em métodos, Introduzir variáveis nomeadas que demonstrem o que está sendo inserido ou esperado do método
+->Caso sejam parâmetros, pode-se usar os parâmetros nomeados , feature do c# (pesquisar versao)
+->Caso seja necessário, troque seus tipos primitivos por constantes ou Enumeradores isso aumenta a legibilidade do código.
+-----------------------------------------------------------------------------
+VERTICAL SEPARATION
+
+->Variáveis e funções devem ser declaradas onde elas serão usadas.
+
+COMO RESOLVER
+->Métodos privados devem ser declarados logo abaixo de onde forem usados sem necessidade de rolagem de scroll.
+->Caso você tenha um método privado que é usado por vários outros métodos , declare após o primeiro local de uso.
+->A classe não deve ser tão longa a ponto de se ficar procurando as rotinas.(Quebrar a classe em classes menores).
+-----------------------------------------------------------------------------
+
+POOR NAMES
+->Usar sempre nomes descritivos e evitar abreviacoes e codificações de termos quando possível.Quanto maior for o nome 
+de uma variável, mais expressiva ela será.
+
+COMO RESOLVER
+->Verificar se o nome é descritivo.
+->O nome deve ser apropriado de acordo com o nível de abstração.
+->Tente seguir padrões
+->Os nomes não devem ser ambiguos.
+->Use nomes extensos para contextos extensos
+->Não use abreviações
+-----------------------------------------------------------------------------
+DUPLICATE CODE
+->É a raiz do mal de todo software.Seguindo o Princípio DRY (Don't repeat yourself) conseguimos 
+evitar essas repetições quando possível.Umas das causas é a cópia de códigos.Tenha muito cuidado
+pois mesmo parecendo que você está sendo produtivo,mas uma mudança pode desencadear muitos erros e bugs.
+
+COMO RESOLVER
+->Usar métodos de extensão (extension Methods)
+->Extrair comportamento para um método
+->Se for algo muito comum, pode-se colocar em um pacote para compartilhamento
+->No caso de uma classe de validação como mostra o exemplo usar um pacote para validações como o Flunt,Fluent Validator etc.

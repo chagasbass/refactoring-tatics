@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringTatics.Domain", "RefactoringTatics.Domain\RefactoringTatics.Domain.csproj", "{78A69AF9-DDF1-4624-991E-87BBAC713B6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefactoringTatics.Source", "RefactoringTatics.Domain\RefactoringTatics.Source.csproj", "{78A69AF9-DDF1-4624-991E-87BBAC713B6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{260167DD-0C72-4432-A529-26176C30F875}"
+	ProjectSection(SolutionItems) = preProject
+		Anotacoes.txt = Anotacoes.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
