@@ -198,6 +198,8 @@ DEAD CODE (DISPOSABLE)
 códigos não usados são distrações.
 
 
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
+
 COMO RESOLVER
 ->Verifique sempre as declarações que não estão sendo usadas no seu código.
 ->Geralmente a própria IDE mostra essse tipo de código (selecionar o item e usar os comandos CTRL . + enter)
@@ -219,3 +221,40 @@ var fluxoUm = EfetuarFluxoUm();
 var fluxoDois = EfetuarFluxoDois(fluxoUm);
 var fluxoTres = EfetuarFluxoTres(fluxoDois);
 var fluxoQuatro = EfetuarFluxoQuatro(fluxoTres);
+
+-----------------------------------------------------------------------------------------
+METHODS CODE SMELLS
+
+LONG METHOD (BLOATER)
+
+->Prefira métodos curtos ao longos.Métodos curtos podem ter nomes melhores porquê fazem menos e por isso são mais fáceis de se entender.
+
+Qual é a definição de Curtos?
+
+-> baseando-se no clean code , um método deveria ter no máximo 30 linhas de codigo para ser considerado curto
+mas ele deve ser curto para que não altere a legibilidade do seu código.
+**A regra de ouro é que o seu método caiba na tela sem efetuar scroll.
+**Não devem ser tão longos e nem tão curtos apenas fáceis de se entender
+
+->COMO RESOLVER
+
+Extração de métodos
+->Faça a extração de métodos menores dentro do método maior encontrando as lógicas que podem seguir sozinhas separando as responsabilidades
+
+**pattern Replace Conditional Dispatcher with Command
+
+Composição de métodos
+-> separar em métodos menores existindo um método "pai" para delegar a chamada dos métodos menores
+
+**pattern Move Acumulation to Visitor
+
+->Alterar as condicionais aninhadas por cláusulas de guarda
+
+**Replace conditional Logic with Strategy
+
+
+Visual studio safe extract method
+
+->Selecionar o codigo e usar o atalho Ctrl . para extrair o código selecionado em um método
+
+

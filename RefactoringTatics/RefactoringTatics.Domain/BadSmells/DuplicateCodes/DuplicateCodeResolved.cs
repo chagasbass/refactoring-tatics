@@ -6,7 +6,7 @@ namespace RefactoringTatics.Source.BadSmells.DuplicateCodes
     {
         public class DuplicateCode
         {
-            public void MeuMetodo(Customer customer, Order order, Log log)
+            public void MyMethod(Customer customer, Order order, Log log)
             {
                 //refatorando usando métodos de extensão.
                 bool customerIsValid = customer.ValidateNullCustomer();

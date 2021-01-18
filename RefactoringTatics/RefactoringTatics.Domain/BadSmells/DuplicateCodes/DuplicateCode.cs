@@ -10,7 +10,7 @@ namespace RefactoringTatics.Source.BadSmells.DuplicateCodes
     /// </summary>
     public class DuplicateCode
     {
-        public void MeuMetodo(Customer customer, Order order, Log log)
+        public void MyMethod(Customer customer, Order order, Log log)
         {
             if(customer is null)
             {
