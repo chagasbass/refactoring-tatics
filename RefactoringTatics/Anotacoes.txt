@@ -256,5 +256,53 @@ Composição de métodos
 Visual studio safe extract method
 
 ->Selecionar o codigo e usar o atalho Ctrl . para extrair o código selecionado em um método
+-----------------------------------------------------------------------------------------
+CONDITIONAL COMPLEXITY (Change preventer)
+
+-> Métodos devem ter um limite de complexidade condicional.O limite do método é medido de acordo com a 
+complexidade ciclomática que deve ser abaixo de 10.
+->Toda vez em que um if é inserido no método, insere-se um número de diferente possibilidades de execução no método
+
+->A classe de exemplo mostra as condicionais identadas formando o que chamamos de "montain range"
+e isso obscurece as declarações que estão sendo executadas.
+
+PARA RESOLVER
+
+-> visual studio code metrics (ele mostra a complexidade ciclomatica de um metodo)
+-----------------------------------------------------------------------------------------
+INCONSISTENT ABSTRACTION LEVEL(CHANGE PREVENTER)
+
+-> Médotos devem operar em um nível consistente de abstração. Não misture níveis altos e baixos de comportamento 
+no mesmo método.
+-> separaçao de resposabilidade
+-> um método de UI deve apenas trabalhar com fluxo relacionados ao UI e nao efetuar uma chamada a dados por exemplo,
+caso isso seja necessário deve-se chamar outro método que faça isso
+
+3 pilares
+Ui logic
+Business logic
+Data Access logic
+
+PARA RESOLVER
+->Extrair as logicas que nao pertencem aquele método para outro método e depois chama-lo no fluxo do mesmo.
+
+Passos
+*Extrair o conteudo do novo método.( quando vc tem um bloco de linhas de codigo que revelam intensao)
+*Refatorar se for necessário.
+*Renomear o método de acordo com o seu propósito.
+
+EXTRACT METHOD
+->Identifique o codigo a ser extraido.
+->Crie o novo método com um nome que expresse a intenção.
+->Copie o codigo que foi extraído para o novo método.
+->Caso existem variáveis temporárias, devem ser copiadas tbm.
+->Identifique as variaveis locais que são modificadas para verificar se o método necessita de retorno.
+->Efetue a compilação.
+->Insira o novo método criado no lugar do codigo extraido.
+->Efetue a compilação e execute os testes.
+
+
+RENAME METHOD
+
 
 
