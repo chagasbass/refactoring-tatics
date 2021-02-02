@@ -301,8 +301,15 @@ EXTRACT METHOD
 ->Insira o novo método criado no lugar do codigo extraido.
 ->Efetue a compilação e execute os testes.
 
-
 RENAME METHOD
-
+->Aplicar quando o nome do método não revela a intenção
+->Verificar se o método é de uma interface ou de uma classe base , se sim devem ser alterados na fonte primeiro
+->Criar um novo método com os mesmos parametros e o novo nome
+->Copie (não corte) o conteúdo para o novo método
+->Efetue a compilação
+->No seu fluxo de implementação troque a chamada do método antigo para o novo
+->Efetua a compilação e execute os testes.
+->Remova o método antigo ou o torne obsoleto([Obsolete])
+->Efetua a compilação e execute os testes.
 
 
