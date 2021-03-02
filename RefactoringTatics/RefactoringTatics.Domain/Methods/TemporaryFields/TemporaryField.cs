@@ -2,7 +2,7 @@
 {
     public class TemporaryField
     {
-        public object ConcatenarNome(string nomeCliente)
+        public object SepararNome(string nomeCliente)
         {
             var nomeSemConcatenacao = nomeCliente.Split('-');
             var primeiroNome = nomeSemConcatenacao[0];

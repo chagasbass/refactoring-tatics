@@ -312,4 +312,8 @@ RENAME METHOD
 ->Remova o método antigo ou o torne obsoleto([Obsolete])
 ->Efetua a compilação e execute os testes.
 
-
+//https://bytelanguage.net/2018/02/25/code-smells-object-oriented-abusers/#:~:text=Object%20Oriented%20Abusers%20are%20a,implementation%20of%20Object%20Oriented%20Concepts.
+https://refactoring.guru/refactoring/smells/oo-abusers
+https://sourcemaking.com/refactoring/smells/oo-abusers
+https://ducmanhphan.github.io/2020-01-24-Fixing-object-oriented-abusers/
+https://www.slideshare.net/rajatsingla03/software-craftsmanship-code-smells-object-orientation-abusers
